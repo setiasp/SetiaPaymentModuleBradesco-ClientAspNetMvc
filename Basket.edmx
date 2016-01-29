@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SepsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Boleto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="order_id" Type="varchar" MaxLength="20" />
+          <Property Name="merchant_id" Type="varchar" MaxLength="20" />
+          <Property Name="cedente" Type="varchar" MaxLength="250" />
+          <Property Name="banco" Type="varchar" MaxLength="20" />
+          <Property Name="numero_agencia" Type="varchar" MaxLength="20" />
+          <Property Name="numero_conta" Type="varchar" MaxLength="20" />
+          <Property Name="url_logo_lojista" Type="varchar" MaxLength="250" />
+          <Property Name="mensagem_header_lojista" Type="varchar" MaxLength="250" />
+          <Property Name="assinatura" Type="varchar" MaxLength="300" />
+          <Property Name="data_emissao" Type="varchar" MaxLength="20" />
+          <Property Name="data_processamento" Type="varchar" MaxLength="20" />
+          <Property Name="data_vencimento" Type="varchar" MaxLength="20" />
+          <Property Name="nome_sacado" Type="varchar" MaxLength="250" />
+          <Property Name="cpf_sacado" Type="varchar" MaxLength="20" />
+          <Property Name="cip" Type="varchar" MaxLength="20" />
+          <Property Name="ano_nosso_numero" Type="varchar" MaxLength="20" />
+          <Property Name="cep_sacado" Type="varchar" MaxLength="20" />
+          <Property Name="endereco_sacado" Type="varchar" MaxLength="250" />
+          <Property Name="cidade_sacado" Type="varchar" MaxLength="250" />
+          <Property Name="uf_sacado" Type="varchar" MaxLength="20" />
+          <Property Name="numero_pedido" Type="varchar" MaxLength="20" />
+          <Property Name="valor_documento" Type="varchar" MaxLength="50" />
+          <Property Name="shopping_id" Type="varchar" MaxLength="50" />
+          <Property Name="numero_documento" Type="varchar" MaxLength="20" />
+          <Property Name="carteira" Type="varchar" MaxLength="20" />
+          <Property Name="instrucao_01" Type="varchar" MaxLength="250" />
+          <Property Name="instrucao_02" Type="varchar" MaxLength="250" />
+          <Property Name="instrucao_03" Type="varchar" MaxLength="250" />
+          <Property Name="instrucao_04" Type="varchar" MaxLength="250" />
+          <Property Name="instrucao_05" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="BoletoItens">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_boleto" Type="int" Nullable="false" />
+          <Property Name="descritivo" Type="varchar" MaxLength="250" />
+          <Property Name="quantidade" Type="varchar" MaxLength="10" />
+          <Property Name="valor" Type="varchar" MaxLength="50" />
+          <Property Name="adicional" Type="bit" />
+        </EntityType>
+        <Association Name="FK__BoletoIte__id_bo__4FE87B0F">
+          <End Role="Boleto" Type="Self.Boleto" Multiplicity="1" />
+          <End Role="BoletoItens" Type="Self.BoletoItens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Boleto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="BoletoItens">
+              <PropertyRef Name="id_boleto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SepsModelStoreContainer">
+          <EntitySet Name="Boleto" EntityType="Self.Boleto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BoletoItens" EntityType="Self.BoletoItens" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__BoletoIte__id_bo__4FE87B0F" Association="Self.FK__BoletoIte__id_bo__4FE87B0F">
+            <End Role="Boleto" EntitySet="Boleto" />
+            <End Role="BoletoItens" EntitySet="BoletoItens" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SepsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Boleto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="order_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="merchant_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="cedente" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="banco" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="numero_agencia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="numero_conta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="url_logo_lojista" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="mensagem_header_lojista" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="assinatura" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="data_emissao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="data_processamento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="data_vencimento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="nome_sacado" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="cpf_sacado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="cip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ano_nosso_numero" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="cep_sacado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="endereco_sacado" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="cidade_sacado" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="uf_sacado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="numero_pedido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="valor_documento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="shopping_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="numero_documento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="carteira" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="instrucao_01" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="instrucao_02" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="instrucao_03" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="instrucao_04" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="instrucao_05" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="BoletoItens" Relationship="Self.FK__BoletoIte__id_bo__4FE87B0F" FromRole="Boleto" ToRole="BoletoItens" />
+        </EntityType>
+        <EntityType Name="BoletoItens">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_boleto" Type="Int32" Nullable="false" />
+          <Property Name="descritivo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="quantidade" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="valor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adicional" Type="Boolean" />
+          <NavigationProperty Name="Boleto" Relationship="Self.FK__BoletoIte__id_bo__4FE87B0F" FromRole="BoletoItens" ToRole="Boleto" />
+        </EntityType>
+        <Association Name="FK__BoletoIte__id_bo__4FE87B0F">
+          <End Role="Boleto" Type="Self.Boleto" Multiplicity="1" />
+          <End Role="BoletoItens" Type="Self.BoletoItens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Boleto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="BoletoItens">
+              <PropertyRef Name="id_boleto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SepsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Boleto" EntityType="Self.Boleto" />
+          <EntitySet Name="BoletoItens" EntityType="Self.BoletoItens" />
+          <AssociationSet Name="FK__BoletoIte__id_bo__4FE87B0F" Association="Self.FK__BoletoIte__id_bo__4FE87B0F">
+            <End Role="Boleto" EntitySet="Boleto" />
+            <End Role="BoletoItens" EntitySet="BoletoItens" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SepsModelStoreContainer" CdmEntityContainer="SepsEntities">
+          <EntitySetMapping Name="Boleto">
+            <EntityTypeMapping TypeName="SepsModel.Boleto">
+              <MappingFragment StoreEntitySet="Boleto">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="merchant_id" ColumnName="merchant_id" />
+                <ScalarProperty Name="cedente" ColumnName="cedente" />
+                <ScalarProperty Name="banco" ColumnName="banco" />
+                <ScalarProperty Name="numero_agencia" ColumnName="numero_agencia" />
+                <ScalarProperty Name="numero_conta" ColumnName="numero_conta" />
+                <ScalarProperty Name="url_logo_lojista" ColumnName="url_logo_lojista" />
+                <ScalarProperty Name="mensagem_header_lojista" ColumnName="mensagem_header_lojista" />
+                <ScalarProperty Name="assinatura" ColumnName="assinatura" />
+                <ScalarProperty Name="data_emissao" ColumnName="data_emissao" />
+                <ScalarProperty Name="data_processamento" ColumnName="data_processamento" />
+                <ScalarProperty Name="data_vencimento" ColumnName="data_vencimento" />
+                <ScalarProperty Name="nome_sacado" ColumnName="nome_sacado" />
+                <ScalarProperty Name="cpf_sacado" ColumnName="cpf_sacado" />
+                <ScalarProperty Name="cip" ColumnName="cip" />
+                <ScalarProperty Name="ano_nosso_numero" ColumnName="ano_nosso_numero" />
+                <ScalarProperty Name="cep_sacado" ColumnName="cep_sacado" />
+                <ScalarProperty Name="endereco_sacado" ColumnName="endereco_sacado" />
+                <ScalarProperty Name="cidade_sacado" ColumnName="cidade_sacado" />
+                <ScalarProperty Name="uf_sacado" ColumnName="uf_sacado" />
+                <ScalarProperty Name="numero_pedido" ColumnName="numero_pedido" />
+                <ScalarProperty Name="valor_documento" ColumnName="valor_documento" />
+                <ScalarProperty Name="shopping_id" ColumnName="shopping_id" />
+                <ScalarProperty Name="numero_documento" ColumnName="numero_documento" />
+                <ScalarProperty Name="carteira" ColumnName="carteira" />
+                <ScalarProperty Name="instrucao_01" ColumnName="instrucao_01" />
+                <ScalarProperty Name="instrucao_02" ColumnName="instrucao_02" />
+                <ScalarProperty Name="instrucao_03" ColumnName="instrucao_03" />
+                <ScalarProperty Name="instrucao_04" ColumnName="instrucao_04" />
+                <ScalarProperty Name="instrucao_05" ColumnName="instrucao_05" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BoletoItens">
+            <EntityTypeMapping TypeName="SepsModel.BoletoItens">
+              <MappingFragment StoreEntitySet="BoletoItens">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_boleto" ColumnName="id_boleto" />
+                <ScalarProperty Name="descritivo" ColumnName="descritivo" />
+                <ScalarProperty Name="quantidade" ColumnName="quantidade" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="adicional" ColumnName="adicional" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

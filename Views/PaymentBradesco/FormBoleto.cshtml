@@ -1,0 +1,8 @@
+﻿@model SetiaPaymentSampleWebApp.Boleto
+@{
+    ViewBag.Title = "Form";
+}
+<h2>Bradesco - Boleto Bancario</h2>
+<p>
+    <a href="http://[URL_FORNECIDA_PELO_BANCO_BRADESCO]?merchantid=[ID_SUA_LOJA]&orderid=@ViewBag.numeroPedido" target="_blank">Exemplo de requisição para o pedido: @ViewBag.numeroPedido - Gerar Boleto</a>
+</p>

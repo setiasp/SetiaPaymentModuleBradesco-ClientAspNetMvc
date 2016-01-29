@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ordem_cobranca>
+  <pedido>
+    <order_id>1234</order_id>
+    <item_pedido>
+      <item>
+        <descritivo>Descricao do produto ou servico</descritivo>
+        <quantidade>1</quantidade>
+        <unidade>un</unidade>
+        <valor>999</valor>
+      </item>
+    </item_pedido>
+    <item_adicional>
+      <adicional>
+        <descricao>Frete</descricao>
+        <valor>498</valor>
+      </adicional>
+    </item_adicional>
+  </pedido>
+  <boleto>
+    <cedente>Setia Tecnologia</cedente>
+    <banco>237</banco>
+    <numero_agencia>0001</numero_agencia>
+    <numero_conta>0253465</numero_conta>
+    <url_logo_lojista>http://www.setia.com.br/imagens/logoSetia.png</url_logo_lojista>
+    <mensagem_header_lojista>Seu principal parceiro em tecnologia</mensagem_header_lojista>
+    <assinatura>550B7ABA977C7D7C4D9B87D6F49A6A60E9F8EE2EC899C95DC14FDBD416B2A8A8A941CCCFF196FFACF151412347262221E1A8EFFFBDD03A08A2C188C189292270670B7ABA091E977C4D9B87D6F49A6A60E9F8EE2EC899C95DC14FDBD416B2A8A81DF6DAE4147BB405B0C03B7EB40F3C82BD03D267EE5294E6F4CDE9F22B5D69AB</assinatura>
+    <data_emissao>02/02/2015</data_emissao>
+    <data_processamento>26/01/2015</data_processamento>
+    <data_vencimento>31/11/2015</data_vencimento>
+    <nome_sacado>Nome do Sacado</nome_sacado>
+    <cpf_sacado>33161893867</cpf_sacado>
+    <cip>865</cip>
+    <ano_nosso_numero>97</ano_nosso_numero>
+    <cep_sacado>01031001</cep_sacado>
+    <endereco_sacado>Avenida Prestes Maia, 321</endereco_sacado>
+    <cidade_sacado>S&#227;o Paulo</cidade_sacado>
+    <uf_sacado>SP</uf_sacado>
+    <numero_pedido>1234</numero_pedido>
+    <valor_documento>R$ 14,97</valor_documento>
+    <shopping_id>0</shopping_id>
+    <numero_documento>15</numero_documento>
+    <carteira>25</carteira>
+    <instrucao>
+      <descricao>Linha 01 - Instrucoes do boleto</descricao>
+      <descricao>Linha 02 - Instrucoes do boleto</descricao>
+      <descricao></descricao>
+      <descricao></descricao>
+      <descricao></descricao>
+    </instrucao>
+  </boleto>
+</ordem_cobranca>
